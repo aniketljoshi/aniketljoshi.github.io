@@ -15,90 +15,87 @@
       document.documentElement.classList.add('dark');
     }
   </script>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', 'Segoe UI', cursive;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300">
+<body class="bg-gradient-to-br from-yellow-100 via-pink-200 to-purple-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 text-gray-900 dark:text-white">
 
-<header class="text-center py-10 bg-gradient-to-r from-blue-600 to-purple-700 text-white dark:from-gray-800 dark:to-gray-700">
-  <h1 class="text-4xl font-bold">Aniket Joshi</h1>
-  <p class="text-lg mt-2">Web3 Engineer | Multi-Cloud Architect | Blockchain Enthusiast</p>
-  <p class="mt-4">
-    <a href="https://github.com/aniketljoshi" class="underline">GitHub</a> |
-    <a href="https://www.linkedin.com/in/aniket-joshi-53330690" class="underline">LinkedIn</a>
-  </p>
-  <button onclick="toggleDarkMode()" class="mt-4 px-4 py-2 bg-white text-black rounded shadow hover:bg-gray-200">
-    Toggle Dark Mode
-  </button>
+<header class="text-center py-10 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white shadow-xl">
+  <h1 class="text-5xl font-extrabold tracking-tight">Aniket Joshi 🚀</h1>
+  <p class="text-lg mt-2 italic">Web3 Ninja | Multi-Cloud Mastermind | GenAI Geek</p>
+  <div class="mt-4 space-x-4">
+    <a href="https://github.com/aniketljoshi" class="underline font-semibold">GitHub</a>
+    <a href="https://www.linkedin.com/in/aniket-joshi-53330690" class="underline font-semibold">LinkedIn</a>
+    <button onclick="toggleDarkMode()" class="bg-white text-black px-3 py-1 rounded shadow hover:bg-gray-200">🌗 Toggle Mode</button>
+  </div>
 </header>
 
-<main class="max-w-5xl mx-auto py-10 px-4 space-y-12">
+<main class="max-w-6xl mx-auto py-12 px-6 space-y-16">
 
   <section>
-    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-    <p>I’m a software architect with over 11 years of experience delivering secure, scalable solutions in Web2 and Web3 environments. I specialize in smart contracts, decentralized applications, GenAI solutions, and enterprise-grade cloud deployments across Azure, AWS, and GCP.</p>
+    <h2 class="text-3xl font-bold mb-4">🧠 Summary</h2>
+    <p class="leading-relaxed">I’m a Full Stack Developer & Software Architect with over 11 years of experience delivering high-impact applications in Web2 and Web3 spaces. Expert in .NET 8, Azure, Solidity, Smart Contracts, CI/CD, AI-driven architectures, and multi-cloud integrations. I love building things that scale and securing them like Fort Knox 🔐.</p>
   </section>
 
   <section>
-    <h2 class="text-2xl font-semibold mb-4">Skills</h2>
-    <ul class="list-disc pl-5 space-y-1">
-      <li>Web3: Solidity, Web3.js, Truffle, Hardhat, Smart Contracts, dApps</li>
-      <li>Web2: .NET 8, Java, Angular 15–18, Spring Boot, GraphQL</li>
-      <li>Cloud & DevOps: Azure, AWS, GCP, Docker, Kubernetes, Terraform, Jenkins</li>
-      <li>GenAI: Azure OpenAI, LangChain, RAG pipelines, Semantic Kernel</li>
-      <li>Databases: MSSQL, CosmosDB, DynamoDB, Cassandra</li>
+    <h2 class="text-3xl font-bold mb-4">🛠 Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-sm font-mono">
+      <div><strong>Languages:</strong> .NET 8, C#, Java, JavaScript, Solidity</div>
+      <div><strong>Frontend:</strong> Angular 15+, jQuery, GraphQL</div>
+      <div><strong>DevOps:</strong> Azure DevOps, Jenkins, ArgoCD, Bicep, Terraform</div>
+      <div><strong>Cloud:</strong> Azure, AWS, GCP</div>
+      <div><strong>Blockchain:</strong> Web3.js, Truffle, Hardhat, Smart Contracts</div>
+      <div><strong>AI:</strong> Azure OpenAI, LangChain, RAG, Semantic Kernel</div>
+      <div><strong>Testing:</strong> xUnit, SonarQube, Checkmarx</div>
+      <div><strong>Infra:</strong> Docker, Kubernetes, Helm, EKS</div>
+      <div><strong>Databases:</strong> MSSQL, CosmosDB, DynamoDB, Cassandra</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-3xl font-bold mb-6">🏢 Experience</h2>
+    <div class="space-y-8">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <h3 class="text-2xl font-bold">Vanderlande (Toyota Group)</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">May 2023 – Present | Pune, India</p>
+        <p class="mt-2">Built AI-powered search using RAG pipelines, migrated secure services in Azure, integrated with Unity Catalog, and led containerized MSSQL infra rollouts.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <h3 class="text-2xl font-bold">Caizin</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Jun 2022 – May 2023</p>
+        <p class="mt-2">Crafted reusable architectural frameworks, and implemented CI/CD for Web3-oriented projects with advanced visual modeling.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <h3 class="text-2xl font-bold">GoKloud</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Jun 2021 – May 2022</p>
+        <p class="mt-2">Standardized clean code practices, guided architecture, and prepared teams for cloud-native blockchain-ready deployments.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <h3 class="text-2xl font-bold">Tavisca, JPMorgan</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Jul 2019 – Mar 2021</p>
+        <p class="mt-2">Built encryption SDK with BYOK, launched PCI UI and migrated legacy infra to Nextgen-Kubernetes patterns.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-3xl font-bold mb-6">✨ Key Achievements</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>🧮 Reduced Azure costs by 20% across multiple services.</li>
+      <li>🚀 Accelerated CI/CD deployment cycles by 30%.</li>
+      <li>🔐 Built enterprise-grade key encryption (BYOK) for data protection.</li>
+      <li>🧰 Created reusable component libraries (98+).</li>
+      <li>🏅 Received “Shout-Out” award at Tavisca (Nov 2020).</li>
     </ul>
-  </section>
-
-  <section>
-    <h2 class="text-2xl font-semibold mb-4">Experience</h2>
-    <div class="space-y-4">
-      <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Vanderlande_logo.svg/2560px-Vanderlande_logo.svg.png" alt="Vanderlande Logo" class="h-10 mb-2">
-        <h3 class="font-bold">Software Architect – Vanderlande (Toyota Group)</h3>
-        <p>Led GenAI and RAG-powered document discovery, secure infrastructure migrations, and integrated blockchain-ready architectures on Azure.</p>
-      </div>
-      <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
-        <h3 class="font-bold">Software Architect – Caizin</h3>
-        <p>Built design standards and CI/CD pipelines tailored for dApps, created reusable frameworks for blockchain-ready Web2 infrastructure.</p>
-      </div>
-      <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
-        <h3 class="font-bold">Technical Lead – GoKloud</h3>
-        <p>Guided teams in microservices and cloud-based patterns with an eye on decentralized compatibility.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="text-2xl font-semibold mb-4">Featured Projects</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      <div class="p-4 border dark:border-gray-700 rounded shadow-sm bg-white dark:bg-gray-800">
-        <h3 class="text-xl font-bold">Decentralized Voting dApp</h3>
-        <p class="text-sm">Ethereum-based voting system using Web3.js, Solidity, Truffle. Deployed on Azure with Angular 15 frontend and CI/CD setup.</p>
-      </div>
-      <div class="p-4 border dark:border-gray-700 rounded shadow-sm bg-white dark:bg-gray-800">
-        <h3 class="text-xl font-bold">GenAI-Powered Document Search</h3>
-        <p class="text-sm">Uses RAG pipelines with Azure OpenAI, vector DBs and LangChain. Deployed for internal use at Vanderlande.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="text-2xl font-semibold mb-4">Blog</h2>
-    <div class="space-y-4">
-      <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
-        <h4 class="text-lg font-semibold">Integrating Web3 in Enterprise Architecture</h4>
-        <p class="text-sm text-gray-600 dark:text-gray-300">Learn how to adopt decentralized design patterns within your existing cloud infrastructure.</p>
-      </div>
-      <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
-        <h4 class="text-lg font-semibold">GenAI + RAG Pipelines for Knowledge Systems</h4>
-        <p class="text-sm text-gray-600 dark:text-gray-300">RAG architecture walkthrough using LangChain, OpenAI and vector embeddings.</p>
-      </div>
-    </div>
   </section>
 
 </main>
 
-<footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
-  © 2025 Aniket Joshi • Built with Tailwind CSS • GitHub Pages
+<footer class="text-center py-6 text-sm text-gray-600 dark:text-gray-400">
+  © 2025 Aniket Joshi • Web3 Dev on a Cloudy Mission ☁️⚡
 </footer>
 
 </body>
