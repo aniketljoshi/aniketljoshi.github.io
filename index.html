@@ -8,16 +8,9 @@
   <script>
     function toggleDarkMode() {
       const html = document.documentElement;
-      if (html.classList.contains('dark')) {
-        html.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        html.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     }
-
-    // Apply stored theme on load
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
     }
@@ -25,68 +18,88 @@
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300">
 
-  <header class="text-center py-10 bg-gradient-to-r from-blue-600 to-purple-700 text-white dark:from-gray-800 dark:to-gray-700">
-    <h1 class="text-4xl font-bold">Aniket Joshi</h1>
-    <p class="text-lg mt-2">Web3 Engineer | Multi-Cloud Architect | Blockchain Enthusiast</p>
-    <p class="mt-4">
-      <a href="https://github.com/aniketljoshi" class="underline">GitHub</a> |
-      <a href="https://www.linkedin.com/in/aniket-joshi-53330690" class="underline">LinkedIn</a>
-    </p>
-    <button onclick="toggleDarkMode()" class="mt-4 px-4 py-2 bg-white text-black rounded shadow hover:bg-gray-200">
-      Toggle Dark Mode
-    </button>
-  </header>
+<header class="text-center py-10 bg-gradient-to-r from-blue-600 to-purple-700 text-white dark:from-gray-800 dark:to-gray-700">
+  <h1 class="text-4xl font-bold">Aniket Joshi</h1>
+  <p class="text-lg mt-2">Web3 Engineer | Multi-Cloud Architect | Blockchain Enthusiast</p>
+  <p class="mt-4">
+    <a href="https://github.com/aniketljoshi" class="underline">GitHub</a> |
+    <a href="https://www.linkedin.com/in/aniket-joshi-53330690" class="underline">LinkedIn</a>
+  </p>
+  <button onclick="toggleDarkMode()" class="mt-4 px-4 py-2 bg-white text-black rounded shadow hover:bg-gray-200">
+    Toggle Dark Mode
+  </button>
+</header>
 
-  <main class="max-w-4xl mx-auto py-10 px-4 space-y-10">
+<main class="max-w-5xl mx-auto py-10 px-4 space-y-12">
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-      <p>I’m a full-stack architect with over 11 years of experience delivering scalable, secure software across Web2 and Web3 ecosystems. I specialize in smart contracts, GenAI integration, multi-cloud deployments, and decentralized applications.</p>
-    </section>
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+    <p>I’m a software architect with over 11 years of experience delivering secure, scalable solutions in Web2 and Web3 environments. I specialize in smart contracts, decentralized applications, GenAI solutions, and enterprise-grade cloud deployments across Azure, AWS, and GCP.</p>
+  </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Skills</h2>
-      <ul class="list-disc pl-5 space-y-1">
-        <li>Solidity, Ethereum, dApps, Smart Contracts</li>
-        <li>.NET 8, Java, Angular, Azure, AWS, GCP</li>
-        <li>Docker, Kubernetes, CI/CD, Terraform</li>
-        <li>Azure OpenAI, LangChain, RAG Architectures</li>
-      </ul>
-    </section>
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+    <ul class="list-disc pl-5 space-y-1">
+      <li>Web3: Solidity, Web3.js, Truffle, Hardhat, Smart Contracts, dApps</li>
+      <li>Web2: .NET 8, Java, Angular 15–18, Spring Boot, GraphQL</li>
+      <li>Cloud & DevOps: Azure, AWS, GCP, Docker, Kubernetes, Terraform, Jenkins</li>
+      <li>GenAI: Azure OpenAI, LangChain, RAG pipelines, Semantic Kernel</li>
+      <li>Databases: MSSQL, CosmosDB, DynamoDB, Cassandra</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Featured Projects</h2>
-      <div class="grid gap-6 md:grid-cols-2">
-        <div class="p-4 border dark:border-gray-700 rounded shadow-sm bg-white dark:bg-gray-800">
-          <h3 class="text-xl font-bold">Decentralized Voting dApp</h3>
-          <p class="text-sm">Built using Solidity, Web3.js, Angular, deployed on Azure. Secure and transparent voting solution.</p>
-        </div>
-        <div class="p-4 border dark:border-gray-700 rounded shadow-sm bg-white dark:bg-gray-800">
-          <h3 class="text-xl font-bold">AI-Powered Document Search</h3>
-          <p class="text-sm">RAG pipelines with Azure OpenAI and LangChain for intelligent document discovery.</p>
-        </div>
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Experience</h2>
+    <div class="space-y-4">
+      <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Vanderlande_logo.svg/2560px-Vanderlande_logo.svg.png" alt="Vanderlande Logo" class="h-10 mb-2">
+        <h3 class="font-bold">Software Architect – Vanderlande (Toyota Group)</h3>
+        <p>Led GenAI and RAG-powered document discovery, secure infrastructure migrations, and integrated blockchain-ready architectures on Azure.</p>
       </div>
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Blog</h2>
-      <div class="space-y-4">
-        <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
-          <h4 class="text-lg font-semibold">Integrating Web3 in Enterprise Architecture</h4>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Explore practical strategies to merge Web2 legacy systems with decentralized technologies.</p>
-        </div>
-        <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
-          <h4 class="text-lg font-semibold">GenAI + RAG Pipelines: Architecture Explained</h4>
-          <p class="text-sm text-gray-600 dark:text-gray-300">A breakdown of using Azure OpenAI, LangChain and vector stores for document search.</p>
-        </div>
+      <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
+        <h3 class="font-bold">Software Architect – Caizin</h3>
+        <p>Built design standards and CI/CD pipelines tailored for dApps, created reusable frameworks for blockchain-ready Web2 infrastructure.</p>
       </div>
-    </section>
+      <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
+        <h3 class="font-bold">Technical Lead – GoKloud</h3>
+        <p>Guided teams in microservices and cloud-based patterns with an eye on decentralized compatibility.</p>
+      </div>
+    </div>
+  </section>
 
-  </main>
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Featured Projects</h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="p-4 border dark:border-gray-700 rounded shadow-sm bg-white dark:bg-gray-800">
+        <h3 class="text-xl font-bold">Decentralized Voting dApp</h3>
+        <p class="text-sm">Ethereum-based voting system using Web3.js, Solidity, Truffle. Deployed on Azure with Angular 15 frontend and CI/CD setup.</p>
+      </div>
+      <div class="p-4 border dark:border-gray-700 rounded shadow-sm bg-white dark:bg-gray-800">
+        <h3 class="text-xl font-bold">GenAI-Powered Document Search</h3>
+        <p class="text-sm">Uses RAG pipelines with Azure OpenAI, vector DBs and LangChain. Deployed for internal use at Vanderlande.</p>
+      </div>
+    </div>
+  </section>
 
-  <footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
-    © 2025 Aniket Joshi • Built with Tailwind CSS • GitHub Pages
-  </footer>
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Blog</h2>
+    <div class="space-y-4">
+      <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
+        <h4 class="text-lg font-semibold">Integrating Web3 in Enterprise Architecture</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Learn how to adopt decentralized design patterns within your existing cloud infrastructure.</p>
+      </div>
+      <div class="p-4 border dark:border-gray-700 rounded bg-white dark:bg-gray-800">
+        <h4 class="text-lg font-semibold">GenAI + RAG Pipelines for Knowledge Systems</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">RAG architecture walkthrough using LangChain, OpenAI and vector embeddings.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
+  © 2025 Aniket Joshi • Built with Tailwind CSS • GitHub Pages
+</footer>
 
 </body>
 </html>
