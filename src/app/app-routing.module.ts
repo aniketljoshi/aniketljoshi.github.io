@@ -7,10 +7,10 @@ import { AchievementsDomainsComponent } from './achievements-domains/achievement
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  //{ path: 'summary', component: SummaryComponent },
-  //{ path: 'experience', component: ExperienceComponent },
-  //{ path: 'skills', component: SkillsComponent },
-  //{ path: 'achievements', component: AchievementsDomainsComponent },
+  { path: 'summary', component: SummaryComponent },
+  { path: 'experience', component: ExperienceComponent },
+  { path: 'skills', component: SkillsComponent },
+  { path: 'achievements', component: AchievementsDomainsComponent },
   { path: '', component: AppComponent, pathMatch: 'full' }
 ];
 
