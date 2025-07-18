@@ -1,8 +1,229 @@
-<nav class="p-4 bg-gray-100 dark:bg-gray-900 text-center space-x-4">
+<!-- <nav class="p-4 bg-gray-100 dark:bg-gray-900 text-center space-x-4">
   <a routerLink="/summary">Summary</a>
   <a routerLink="/experience">Experience</a>
   <a routerLink="/skills">Skills</a>
   <a routerLink="/achievements">Achievements</a>
 </nav>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aniket Joshi - Web3 & Cloud Architect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-gradient-to-br from-yellow-100 via-pink-200 to-purple-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 text-gray-900 dark:text-white">
+
+  <header class="text-center py-10 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white shadow-xl">
+    <h1 class="text-5xl font-extrabold tracking-tight">Aniket Joshi</h1>
+    <p class="text-lg mt-2 italic font-semibold tracking-wide text-purple-900 dark:text-purple-300">
+      Web3 Ninja ⚔️ | Software Architect 🏗️ | Multi-Cloud Mastermind ☁️ | DevOps Wizard 🧙‍♂️ | GenAI Geek 🤖 |
+      Blockchain Lover 🔗
+    </p>
+
+    <div class="mt-6 flex justify-center space-x-6">
+      <a href="https://github.com/aniketljoshi" target="_blank" title="GitHub">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="h-6 w-6 invert dark:invert-0"
+          alt="GitHub">
+      </a>
+      <a href="https://www.linkedin.com/in/aniketljoshi999" target="_blank" title="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" class="h-6 w-6 invert dark:invert-0"
+          alt="LinkedIn">
+      </a>
+      <a href="https://x.com/aniketljoshi" target="_blank" title="Twitter/X">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" class="h-6 w-6 invert dark:invert-0"
+          alt="Twitter/X">
+      </a>
+      <a href="https://stackoverflow.com/users/6426827/aniket-joshi" target="_blank" title="Stack Overflow">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/stackoverflow.svg"
+          class="h-6 w-6 invert dark:invert-0" alt="Stack Overflow">
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto py-12 px-6 space-y-16">
+
+    <section>
+      <h2 class="text-3xl font-bold mb-4">🧠 Summary</h2>
+      <p class="leading-relaxed">I’m a Full Stack Developer & Software Architect with over 11 years of experience
+        delivering high-impact applications in Web2 and Web3 spaces. Expert in .NET 8, Azure, Solidity, Smart Contracts,
+        CI/CD, AI-driven architectures, and multi-cloud integrations. I love building things that scale and securing
+        them like Fort Knox 🔐.</p>
+    </section>
+
+    <section>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold mb-4">🌍 Domains</h2>
+          <ul class="list-disc pl-6 space-y-1 text-lg">
+            <li>🏦 Banking</li>
+            <li>✈️ Travel & Airports / Parcel Logistics</li>
+            <li>🚚 Logistics & Supply Chain</li>
+            <li>💊 Healthcare</li>
+            <li>🛒 E-Commerce</li>
+            <li>🏢 ERP Systems</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-3xl font-bold mb-4">✨ Key Achievements</h2>
+          <ul class="list-disc pl-6 space-y-2 text-lg">
+            <li>🧮 Reduced Azure costs by 20% across multiple services.</li>
+            <li>🚀 Accelerated CI/CD deployment cycles by 30%.</li>
+            <li>🔐 Built enterprise-grade key encryption (BYOK) for data protection.</li>
+            <li>🧰 Created reusable component libraries (98+).</li>
+            <li>🏅 Received “Shout-Out” award at Tavisca (Nov 2020).</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-4">🛠 Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-sm font-mono">
+        <div><strong>Languages:</strong> .NET 8, C#, Java, Solidity, TypeScript, NodeJs </div>
+        <div><strong>Frontend:</strong> Angular 15+, React, Ionic, HTML5, SCSS, TailWind, jQuery</div>
+        <div><strong>DevOps:</strong> Azure DevOps, Jenkins, ArgoCD, Bicep, Terraform, Trivy, Spinnaker</div>
+        <div><strong>Cloud:</strong> Azure, AWS, GCP</div>
+        <div><strong>Blockchain:</strong> Solidity, Web3.js, Truffle, Hardhat, Waffle, Mocha, Chai, Smart Contracts,
+          dApps, Tokenization, Role-Based Access</div>
+        <div><strong>AI & GenAI:</strong> Azure OpenAI, Microsoft AI Services, LangChain, RAG, Semantic Kernel, Agentic
+          AI Architectures</div>
+        <div><strong>Testing & Security:</strong> xUnit, nUnit, Autofaker, Bogus, JUnit, SonarQube, Veracode, Checkmarx,
+          Audit Logging</div>
+        <div><strong>Infrastructure:</strong> Docker, Kubernetes, Helm, EKS, CI/CD, Application Insights</div>
+        <div><strong>Databases:</strong> PostgreSql, MSSQL, CosmosDB, DynamoDB, Cassandra, Redis, Databricks, Unit
+          Catelog, MySQL</div>
+        <div><strong>Messaging:</strong> Kafka, RabbitMQ, Azure Service Bus</div>
+        <div><strong>Tools & Collaboration:</strong> Git, Jira, Confluence, Figma, LucidCharts, Miro, Agile
+          methodologies</div>
+        <div><strong>Others:</strong> GraphQL, HotChocolate, MeditR, DDD, Dapr, GRpc</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">🏢 Experience</h2>
+      <div class="space-y-8">
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex items-center space-x-4">
+          <img src="../assets/logos/logo_page1_1.png" alt="Vanderlande Logo"
+            class="w-16 h-16 object-contain rounded bg-white p-1 shadow-md">
+          <div>
+            <h3 class="text-xl font-bold">Vanderlande (Toyota Group)</h3>
+            <p class="text-sm italic text-gray-500 dark:text-gray-400">May 2023 – Present | Pune, India</p>
+            <p class="mt-2">Built AI-powered search using RAG pipelines, migrated secure services in Azure, integrated
+              with Unity Catalog, and led containerized MSSQL infra rollouts.</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex items-center space-x-4">
+          <img src="../assets/logos/logo_page1_2.png" alt="Caizin Logo"
+            class="w-16 h-16 object-contain rounded bg-white p-1 shadow-md">
+          <div>
+            <h3 class="text-xl font-bold">Caizin</h3>
+            <p class="text-sm italic text-gray-500 dark:text-gray-400">Jun 2022 – May 2023 | Pune, India</p>
+            <p class="mt-2">Crafted reusable architectural frameworks, and implemented CI/CD for client projects
+              with advanced visual modeling.</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex items-center space-x-4">
+          <img src="../assets/logos/logo_page2_1.png" alt="GoKloud Logo"
+            class="w-16 h-16 object-contain rounded bg-white p-1 shadow-md">
+          <div>
+            <h3 class="text-xl font-bold">GoKloud</h3>
+            <p class="text-sm italic text-gray-500 dark:text-gray-400">Jun 2021 – May 2022 | Pune, India</p>
+            <p class="mt-2">Standardized clean code practices, guided architecture, and prepared teams for cloud-native
+              applications deployments.</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex items-center space-x-4">
+          <img src="../assets/logos/logo_page2_2.jpeg" alt="MediaAgility Logo"
+            class="w-16 h-16 object-contain rounded bg-white p-1 shadow-md">
+          <div>
+            <h3 class="text-xl font-bold">MediaAgility</h3>
+            <p class="text-sm italic text-gray-500 dark:text-gray-400">Mar 2021 – Jun 2021 | Pune, India</p>
+            <p class="mt-2">Led the design, build, and implementation of scalable, secure cloud-native products using
+              AI/ML frameworks and best practices for modern application development.</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex items-center space-x-4">
+          <img src="../assets/logos/logo_page2_3.jpeg" alt="Tavisca Logo"
+            class="w-16 h-16 object-contain rounded bg-white p-1 shadow-md">
+          <div>
+            <h3 class="text-xl font-bold">Tavisca, JPMorgan</h3>
+            <p class="text-sm italic text-gray-500 dark:text-gray-400">Jul 2019 – Mar 2021 | Pune, India</p>
+            <p class="mt-2">Built encryption SDK with BYOK, launched PCI UI and migrated legacy infra to
+              Nextgen-Kubernetes patterns.</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex items-center space-x-4">
+          <img src="../assets/logos/logo_page2_4.jpeg" alt="UPS Logistics Logo"
+            class="w-16 h-16 object-contain rounded bg-white p-1 shadow-md">
+          <div>
+            <h3 class="text-xl font-bold">UPS Logistics Pvt Ltd</h3>
+            <p class="text-sm italic text-gray-500 dark:text-gray-400">Oct 2017 – Jun 2019 | Pune, India</p>
+            <p class="mt-2">Designed reusable AngularJS components, optimized service queues and SQL models to support
+              high-load events.</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex items-center space-x-4">
+          <img src="../assets/logos/logo_page2_5.jpeg" alt="LogicalDNA Logo"
+            class="w-16 h-16 object-contain rounded bg-white p-1 shadow-md">
+          <div>
+            <h3 class="text-xl font-bold">LogicalDNA Solutions</h3>
+            <p class="text-sm italic text-gray-500 dark:text-gray-400">Jun 2016 – Oct 2017 | Pune, India</p>
+            <p class="mt-2">Delivered full-stack .NET and AngularJS solutions, contributing to end-to-end development.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex items-center space-x-4">
+          <img src="../assets/logos/logo_page2_6.jpeg" alt="Econsign Soft Logo"
+            class="w-16 h-16 object-contain rounded bg-white p-1 shadow-md">
+          <div>
+            <h3 class="text-xl font-bold">Econsign Soft</h3>
+            <p class="text-sm italic text-gray-500 dark:text-gray-400">Sep 2015 – May 2016 | Pune, India</p>
+            <p class="mt-2">Built scalable backend services and participated in .NET application development cycles.</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex items-center space-x-4">
+          <img src="../assets/logos/logo_page2_7.jpeg" alt="Noetic Systems Logo"
+            class="w-16 h-16 object-contain rounded bg-white p-1 shadow-md">
+          <div>
+            <h3 class="text-xl font-bold">Noetic Systems Pvt Ltd</h3>
+            <p class="text-sm italic text-gray-500 dark:text-gray-400">Jun 2014 – Aug 2015 | Pune, India</p>
+            <p class="mt-2">Contributed to early-stage .NET projects, focusing on core logic, UI integration, and agile
+              sprints.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-6 text-sm text-gray-600 dark:text-gray-400">
+    © 2025 Aniket Joshi • Web3 Dev on a Cloudy Mission ☁️⚡
+  </footer>
+
+</body>
+
+</html>
