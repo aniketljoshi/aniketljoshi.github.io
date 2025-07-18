@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './achievements-domains.component.html',
   styleUrls: ['./achievements-domains.component.css']
 })
-export class AchievementsdomainsComponent { }
+export class AchievementsDomainsComponent { }
