@@ -17,14 +17,49 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.css"],
-            "scripts": [],
-            "baseHref": "/aniketljoshi.github.io/"
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "baseHref": "/aniketljoshi.github.io/",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "development": {
+              "baseHref": "/",
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "aniket-portfolio:build"
+            "browserTarget": "aniket-portfolio:build:development"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "aniket-portfolio:build:production"
+            },
+            "development": {
+              "browserTarget": "aniket-portfolio:build:development"
+            }
           }
         }
       }
