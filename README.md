@@ -1,4 +1,4 @@
-# Aniket Joshi - Software Architect | Full-Stack Web3 Engineer | Multi-Cloud Evangelist
+# Aniket Joshi - Software Architect | Full-Stack Web3 Engineer | Multi-Cloud Evangelist 
 
 This is the source code for my personal portfolio hosted at **https://aniketljoshi.github.io**.
 
