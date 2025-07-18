@@ -3,6 +3,7 @@
   "version": 1,
   "projects": {
     "aniket-portfolio": {
+      "root": ""
       "projectType": "application",
       "sourceRoot": "src",
       "architect": {
