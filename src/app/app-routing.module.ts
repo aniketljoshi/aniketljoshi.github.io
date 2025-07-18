@@ -4,13 +4,14 @@ import { ExperienceComponent } from './experience/experience.component';
 import { SummaryComponent } from './summary/summary.component';
 import { SkillsComponent } from './skills/skills.component';
 import { AchievementsDomainsComponent } from './achievements-domains/achievements-domains.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: 'summary', component: SummaryComponent },
   { path: 'experience', component: ExperienceComponent },
   { path: 'skills', component: SkillsComponent },
   { path: 'achievements', component: AchievementsDomainsComponent },
-  { path: '', redirectTo: '/summary', pathMatch: 'full' }
+  { path: '', component: AppComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
