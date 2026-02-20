@@ -1,6 +1,5 @@
 import { motion, type Variants } from 'framer-motion';
-import { ArrowRight, Github, Hexagon, TerminalSquare } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { ArrowRight, Github, Hexagon, TerminalSquare, Target, Activity, Wifi } from 'lucide-react';
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -17,42 +16,83 @@ const itemVariants: Variants = {
     visible: { opacity: 1, y: 0, transition: { type: 'spring', bounce: 0.4 } }
 };
 
-// Binary Rain Component
-const BinaryRain = () => {
-    const [drops, setDrops] = useState<{ x: number, delay: number, duration: number, seq: string }[]>([]);
-
-    useEffect(() => {
-        const generateSeq = () => Array.from({ length: 15 }, () => Math.random() > 0.5 ? '1' : '0').join('');
-        const newDrops = Array.from({ length: 30 }).map(() => ({
-            x: Math.random() * 100,
-            delay: Math.random() * 5,
-            duration: Math.random() * 5 + 5,
-            seq: generateSeq()
-        }));
-        setDrops(newDrops);
-    }, []);
-
+// Cyber Radar Background Component
+const CyberRadar = () => {
     return (
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.03]">
-            {drops.map((drop, i) => (
-                <motion.div
-                    key={i}
-                    initial={{ y: '-100vh' }}
-                    animate={{ y: '100vh' }}
-                    transition={{
-                        duration: drop.duration,
-                        repeat: Infinity,
-                        ease: 'linear',
-                        delay: drop.delay
-                    }}
-                    className="absolute text-primary-500 font-mono text-sm font-bold flex flex-col items-center leading-none"
-                    style={{ left: `${drop.x}vw` }}
-                >
-                    {drop.seq.split('').map((char, j) => (
-                        <span key={j} className={j === drop.seq.length - 1 ? 'text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]' : ''}>{char}</span>
-                    ))}
-                </motion.div>
-            ))}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-50">
+            {/* Center Container */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] md:w-[1200px] md:h-[1200px]">
+
+                {/* Radar Grid/Crosshairs */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-full h-[1px] bg-primary-500/10" />
+                    <div className="h-full w-[1px] absolute bg-primary-500/10" />
+                </div>
+
+                {/* Concentric Wireframe Rings */}
+                <div className="radar-ring w-[20%] h-[20%] border-primary-500/20" />
+                <div className="radar-ring w-[40%] h-[40%] border-primary-500/20 border-dashed" />
+                <div className="radar-ring w-[60%] h-[60%] border-accent-500/10" />
+                <div className="radar-ring w-[80%] h-[80%] border-primary-500/20 border-dotted" />
+                <div className="radar-ring w-[100%] h-[100%] border-accent-500/5" />
+
+                {/* Rotating Radar Sweep Gradient */}
+                <div className="absolute inset-0 radar-sweep blur-[2px]" />
+
+                {/* SVGs for connecting lines to nodes */}
+                <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+                    <line x1="50%" y1="50%" x2="30%" y2="20%" stroke="var(--color-primary-500)" strokeWidth="1" strokeDasharray="4 4" opacity="0.4" />
+                    <line x1="50%" y1="50%" x2="35%" y2="75%" stroke="var(--color-accent-500)" strokeWidth="1" strokeDasharray="2 4" opacity="0.3" />
+                    <line x1="50%" y1="50%" x2="61%" y2="79%" stroke="var(--color-primary-500)" strokeWidth="1" strokeDasharray="4 4" opacity="0.4" />
+                </svg>
+
+                {/* Tracking Nodes / Blips with Icons and Text */}
+                {[
+                    { t: '20%', l: '30%', icon: Target, text: 'TGT-A' },
+                    { t: '75%', l: '35%', icon: Activity, text: 'SYS-UP' },
+                    { t: '79%', l: '61%', icon: Wifi, text: 'UPLINK' },
+                ].map((pos, i) => (
+                    <div key={i} className="absolute flex items-center gap-1 z-10" style={{ top: pos.t, left: pos.l }}>
+                        <div className="relative w-2 h-2 bg-primary-400 rounded-full">
+                            <div className="absolute inset-0 bg-primary-400 rounded-full animate-[radar-pulse_2s_infinite]" style={{ animationDelay: `${i * 0.5}s` }} />
+                        </div>
+                        {pos.icon && <pos.icon size={12} className="text-primary-500 opacity-60 ml-1" />}
+                        {pos.text && <span className="text-[10px] font-mono text-primary-400/60 uppercase hidden md:inline">{pos.text}</span>}
+                    </div>
+                ))}
+
+                {/* Central Wireframe Earth */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full shadow-[inset_0_0_30px_rgba(0,240,255,0.2)] border border-primary-500/40 flex items-center justify-center overflow-hidden z-20 bg-surface-darker/50 backdrop-blur-sm">
+                    <div className="absolute w-[120%] h-[30%] border border-primary-500/30 rounded-[50%]" />
+                    <div className="absolute w-[120%] h-[70%] border border-primary-500/20 rounded-[50%]" />
+                    <div className="absolute w-[30%] h-[120%] border border-primary-500/30 rounded-[50%]" />
+                    <div className="absolute w-[70%] h-[120%] border border-primary-500/20 rounded-[50%]" />
+                    <div className="absolute w-full h-[1px] bg-primary-500/40" />
+                    <div className="absolute h-full w-[1px] bg-primary-500/40" />
+                </div>
+
+                {/* Additional Telemetry specific to the globe */}
+                <div className="absolute top-[calc(50%+7.5rem)] left-1/2 -translate-x-1/2 flex flex-col items-center gap-0.5 z-20 min-w-max">
+                    <span className="text-xs font-mono font-bold text-accent-400 glitch-text drop-shadow-[0_0_5px_rgba(230,0,54,0.5)]" data-text="DATA FLOW: 98%">DATA FLOW: 98%</span>
+                    <span className="text-[10px] font-mono text-primary-400/80 uppercase">SYS.CORE.ACTIVE</span>
+                </div>
+
+                {/* Floating Telemetry Panels */}
+                <div className="absolute top-[35%] right-[15%] border-r-2 border-primary-500/50 pr-2 text-right hidden md:block">
+                    <div className="text-[10px] font-mono text-primary-400/80">LAT: 45.9822</div>
+                    <div className="text-[10px] font-mono text-accent-400/80 mt-0.5">LON: -12.441</div>
+                </div>
+                <div className="absolute top-[15%] left-[15%] border-l-2 border-accent-500/50 pl-2 hidden md:block">
+                    <div className="text-[10px] font-mono text-primary-400/80">SEC: ENCRYPTED</div>
+                    <div className="text-[10px] font-mono text-white/60 mt-0.5">PING: 12ms</div>
+                </div>
+            </div>
+
+            {/* Tactical HUD Corner Reticles */}
+            <div className="absolute top-8 left-8 w-16 h-16 border-t-2 border-l-2 border-primary-500/30" />
+            <div className="absolute top-8 right-8 w-16 h-16 border-t-2 border-r-2 border-primary-500/30" />
+            <div className="absolute bottom-8 left-8 w-16 h-16 border-b-2 border-l-2 border-primary-500/30" />
+            <div className="absolute bottom-8 right-8 w-16 h-16 border-b-2 border-r-2 border-primary-500/30" />
         </div>
     );
 };
@@ -65,33 +105,8 @@ export function Hero() {
                 style={{ backgroundImage: 'linear-gradient(var(--color-surface-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-surface-border) 1px, transparent 1px)', backgroundSize: '50px 50px' }}
             />
 
-            {/* Binary Rain Background */}
-            <BinaryRain />
-
-            {/* Floating Tech Symbols Background */}
-            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                {['</>', '{ }', ';;', '1010', '[ ]', '=>', '#', '()'].map((symbol, i) => (
-                    <motion.div
-                        key={i}
-                        initial={{ y: '120vh', x: `${Math.random() * 100}vw`, opacity: 0.1 }}
-                        animate={{
-                            y: '-20vh',
-                            x: `${Math.random() * 100}vw`,
-                            rotate: 360,
-                            opacity: [0.1, 0.3, 0.1]
-                        }}
-                        transition={{
-                            duration: Math.random() * 15 + 15,
-                            repeat: Infinity,
-                            ease: 'linear',
-                            delay: Math.random() * 10
-                        }}
-                        className="absolute text-primary-500/20 font-mono text-2xl md:text-4xl font-black select-none"
-                    >
-                        {symbol}
-                    </motion.div>
-                ))}
-            </div>
+            {/* Cyber Radar HUD Background */}
+            <CyberRadar />
 
             <div className="absolute top-1/4 -right-64 w-96 h-96 bg-primary-500/10 blur-[120px] rounded-full pointer-events-none" />
             <div className="absolute bottom-[-10%] -left-64 w-96 h-96 bg-accent-500/10 blur-[120px] rounded-full pointer-events-none" />
