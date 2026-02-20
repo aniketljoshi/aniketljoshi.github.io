@@ -1,0 +1,364 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", sans-serif;
+  --font-mono: "Space Grotesk", "Courier New", monospace;
+
+  --color-primary-400: #00f0ff;
+  --color-primary-500: #00e0f0;
+  --color-primary-600: #00b8c4;
+
+  --color-secondary-400: #ff003c;
+  --color-secondary-500: #e60036;
+
+  --color-accent-400: #7000ff;
+  --color-accent-500: #5900cc;
+
+  --color-background-dark: #050505;
+  --color-background-darker: #020202;
+  --color-surface-dark: #111111;
+  --color-surface-border: #222222;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background-dark);
+    color: #e0e0e0;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-mono);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: var(--color-primary-500);
+    color: #000;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .neon-border {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2), inset 0 0 10px rgba(0, 240, 255, 0.1);
+  }
+
+  .neon-text {
+    color: var(--color-primary-400);
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.5), 0 0 15px rgba(0, 240, 255, 0.3);
+  }
+
+  .cyber-gradient {
+    background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-secondary-500) 100%);
+  }
+
+  /* New Animation Utilities */
+  .typing-cursor::after {
+    content: '_';
+    animation: blink 1s step-end infinite;
+    color: var(--color-primary-500);
+  }
+
+  /* Radar Specific Styles */
+  .radar-sweep {
+    background: conic-gradient(from 0deg,
+        transparent 0deg,
+        transparent 270deg,
+        rgba(0, 240, 255, 0.05) 320deg,
+        rgba(0, 240, 255, 0.4) 360deg);
+    animation: spin 6s linear infinite;
+    border-radius: 50%;
+  }
+
+  .radar-ring {
+    border: 1px solid rgba(0, 240, 255, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .glitch-text {
+    position: relative;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+
+  .glitch-text::before {
+    left: 2px;
+    text-shadow: -1px 0 var(--color-accent-500);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+
+  .glitch-text::after {
+    left: -2px;
+    text-shadow: -1px 0 var(--color-primary-500);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes radar-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(32px, 9999px, 28px, 0);
+  }
+
+  5% {
+    clip: rect(70px, 9999px, 79px, 0);
+  }
+
+  10% {
+    clip: rect(8px, 9999px, 58px, 0);
+  }
+
+  15% {
+    clip: rect(93px, 9999px, 86px, 0);
+  }
+
+  20% {
+    clip: rect(100px, 9999px, 9px, 0);
+  }
+
+  25% {
+    clip: rect(17px, 9999px, 73px, 0);
+  }
+
+  30% {
+    clip: rect(39px, 9999px, 97px, 0);
+  }
+
+  35% {
+    clip: rect(81px, 9999px, 57px, 0);
+  }
+
+  40% {
+    clip: rect(86px, 9999px, 43px, 0);
+  }
+
+  45% {
+    clip: rect(30px, 9999px, 35px, 0);
+  }
+
+  50% {
+    clip: rect(38px, 9999px, 66px, 0);
+  }
+
+  55% {
+    clip: rect(5px, 9999px, 28px, 0);
+  }
+
+  60% {
+    clip: rect(4px, 9999px, 16px, 0);
+  }
+
+  65% {
+    clip: rect(61px, 9999px, 12px, 0);
+  }
+
+  70% {
+    clip: rect(57px, 9999px, 46px, 0);
+  }
+
+  75% {
+    clip: rect(60px, 9999px, 77px, 0);
+  }
+
+  80% {
+    clip: rect(3px, 9999px, 26px, 0);
+  }
+
+  85% {
+    clip: rect(78px, 9999px, 82px, 0);
+  }
+
+  90% {
+    clip: rect(84px, 9999px, 77px, 0);
+  }
+
+  95% {
+    clip: rect(67px, 9999px, 62px, 0);
+  }
+
+  100% {
+    clip: rect(81px, 9999px, 70px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(65px, 9999px, 100px, 0);
+  }
+
+  5% {
+    clip: rect(52px, 9999px, 74px, 0);
+  }
+
+  10% {
+    clip: rect(79px, 9999px, 85px, 0);
+  }
+
+  15% {
+    clip: rect(75px, 9999px, 5px, 0);
+  }
+
+  20% {
+    clip: rect(67px, 9999px, 61px, 0);
+  }
+
+  25% {
+    clip: rect(14px, 9999px, 79px, 0);
+  }
+
+  30% {
+    clip: rect(1px, 9999px, 66px, 0);
+  }
+
+  35% {
+    clip: rect(86px, 9999px, 30px, 0);
+  }
+
+  40% {
+    clip: rect(23px, 9999px, 98px, 0);
+  }
+
+  45% {
+    clip: rect(85px, 9999px, 72px, 0);
+  }
+
+  50% {
+    clip: rect(71px, 9999px, 75px, 0);
+  }
+
+  55% {
+    clip: rect(2px, 9999px, 48px, 0);
+  }
+
+  60% {
+    clip: rect(30px, 9999px, 16px, 0);
+  }
+
+  65% {
+    clip: rect(59px, 9999px, 50px, 0);
+  }
+
+  70% {
+    clip: rect(41px, 9999px, 62px, 0);
+  }
+
+  75% {
+    clip: rect(2px, 9999px, 82px, 0);
+  }
+
+  80% {
+    clip: rect(47px, 9999px, 73px, 0);
+  }
+
+  85% {
+    clip: rect(3px, 9999px, 27px, 0);
+  }
+
+  90% {
+    clip: rect(26px, 9999px, 55px, 0);
+  }
+
+  95% {
+    clip: rect(42px, 9999px, 97px, 0);
+  }
+
+  100% {
+    clip: rect(38px, 9999px, 49px, 0);
+  }
+}
+
+/* Custom Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-600);
+}
