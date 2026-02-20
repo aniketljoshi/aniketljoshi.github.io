@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# 👨‍💻 Aniket Joshi - Software Architect | Web3 Ninja | Cloud Mastermind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> *Welcome to my digitized consciousness.*
 
-Currently, two official plugins are available:
+This is the source code for my personal portfolio, currently hosted with zero downtime (probably) at **[aniketljoshi.github.io](https://aniketljoshi.github.io)**. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+If you're reading this, you either want to hire me, steal my CSS styling, or you misclicked. Either way, welcome! ☕
 
-## React Compiler
+## 🚀 The Tech Stack (What powers the matrix)
+I recently nuked the old Angular codebase from orbit. The new stack is lighter, faster, and aggressively cyberpunk:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React + Vite** (Because waiting for Webpack builds is so 2019)
+- **TypeScript** (Because `undefined is not a function` hurts my soul)
+- **Tailwind CSS v4** (Utility classes go brrrrrr)
+- **Framer Motion** (For that buttery-smooth, 60fps eye-candy)
+- **Lucide React** (Sharp, clean icons)
+- **GitHub Actions** (Automating deployments so I can drink more coffee)
+- **GitHub Pages** (Free enterprise-grade hosting ✨)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 System Architecture (Directory Structure)
+```
+src/
+├── assets/                  # Logos and other static bits
+├── components/
+│   ├── sections/            # The heavy lifters (Hero, Skills, Experience, etc.)
+│   ├── Navbar.tsx           # Floating glass-panel navigation
+│   └── Footer.tsx           # Where the copyright goes to die
+├── App.tsx                  # The root component bridging the multiverse
+├── index.css                # Where the custom Cyberpunk CSS magic happens
+└── main.tsx                 # The spark that boots the system
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧑‍💻 Manual Override (Development)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Want to run this beast locally? Make sure you have Node.js installed, grab a cup of coffee, and run:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Hack into the mainframe (download packages)
+npm install
+
+# Boot the local dev server at ludicrous speeds
+npm run dev
 ```
+
+Then navigate to `http://localhost:5173` in your browser of choice to see the neon lights.
+
+## 🔁 CI/CD (The Machine Learning to Deploy)
+
+Deployment is completely automated by `.github/workflows/main.yml`. When I push to `main`, the cloud hamsters wake up:
+1. Checks out the code.
+2. Summons Node.js v20.
+3. Installs dependencies (`npm ci`).
+4. Runs the Vite builder to squeeze everything into the `dist/` directory.
+5. Teleports the `dist/` folder to the `gh-pages` branch using `peaceiris/actions-gh-pages@v4`.
+6. Goes back to sleep.
